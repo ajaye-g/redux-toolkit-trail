@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {  useState } from 'react';
 import products from "../../api/products.json";
 import AfterCart from './CardButtons/AfterCart';
 import BeforeCart from './CardButtons/BeforeCart';
@@ -10,13 +10,15 @@ import "./ProductList.css";
   const addToCart = () =>{
     setCount(1);
   }
-  console.log(count)
+  
+   console.log(count)
   return (
     <section className="container">
         {products?.map((product, key) =>(
             <div className="product-container" key={key}>
                 <img src={product?.image} alt=""/>
                 <h3>{product?.title}</h3>
+                
                 {count > 0 ? <AfterCart/> : <BeforeCart addToCart={addToCart}/>}
                 
 
